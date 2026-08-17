@@ -1,0 +1,6 @@
+= Changelog
+
+== 2026-08-17 — v0.1.0
+
+* Tree + codecs (JSON, JSON5-lite, YAML-lite, INI/TOML, SDLang, HCL-lite)
+* JSON Schema overlay, SDLang catalog loader, registry.sdl persistence
