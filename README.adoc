@@ -9,7 +9,7 @@ ifdef::env-github[]
 <h3 align="center">uniconfig-core</h3>
 <p align="center">
 Schema-aware config tree for UniConfig Config Panel.<br />
-<a href="https://docs.devcentr.org/uniconfig/latest/architecture.html"><strong>Explore the docs »</strong></a>
+<a href="https://docs.devcentr.org/uniconfig/architecture.html"><strong>Explore the docs »</strong></a>
 </p>
 </div>
 ++++
