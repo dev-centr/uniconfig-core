@@ -9,6 +9,7 @@ import uniconfig.core.codec;
 import uniconfig.core.schema;
 import uniconfig.core.merge;
 import uniconfig.core.profiles;
+import uniconfig.core.profile_resolver;
 import uniconfig.core.registry;
 
 struct OpenedDocument
@@ -28,6 +29,8 @@ struct OpenContext
     ConfigProfile[] profiles;
     string bundledSchemaDir;
     string profileCatalogDir;
+    ProfileResolver resolver;
+    bool hasResolver;
 }
 
 OpenedDocument openDocument(string path, OpenContext ctx)
@@ -35,7 +38,16 @@ OpenedDocument openDocument(string path, OpenContext ctx)
     OpenedDocument d;
     d.path = absolutePath(path);
     d.raw = exists(path) ? readText(path) : "";
-    auto matched = matchProfile(ctx.profiles, d.path);
+    ConfigProfile* matched;
+    string catalogDir = ctx.profileCatalogDir;
+    if (ctx.hasResolver)
+    {
+        matched = ctx.resolver.match(d.path);
+        if (matched !is null)
+            catalogDir = ctx.resolver.catalogDirFor(*matched);
+    }
+    else
+        matched = matchProfile(ctx.profiles, d.path);
     if (matched !is null)
         d.profile = *matched;
 
@@ -51,7 +63,7 @@ OpenedDocument openDocument(string path, OpenContext ctx)
         d.instance = new ConfigNode;
 
     if (d.profile.id.length)
-        d.schema = schemaForProfile(d.profile, ctx.profileCatalogDir, ctx.bundledSchemaDir);
+        d.schema = schemaForProfile(d.profile, catalogDir, ctx.bundledSchemaDir);
 
     if (d.schema.root.properties.length == 0)
     {

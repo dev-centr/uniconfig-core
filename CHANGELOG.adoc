@@ -1,5 +1,12 @@
 = Changelog
 
+== 2026-09-01 — catalog index
+
+* `catalog-index.sdl` — user-local registered vocabulary pointers
+* `registerCatalogSource` / `unregisterCatalogSource` with required repository URL or closed-source flag
+* `ProfileResolver` — lazy merge of bundled + registered catalogs
+* `formatSpecUrl` for format documentation links
+
 == 2026-08-17 — v0.1.0
 
 * Tree + codecs (JSON, JSON5-lite, YAML-lite, INI/TOML, SDLang, HCL-lite)

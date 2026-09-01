@@ -17,6 +17,11 @@ struct ConfigProfile
     ConfigFormat format = ConfigFormat.unknown;
     string schemaPath; /// relative to the catalog file, or `bundled:<name>`
     string description;
+    /// Registered catalog source (`catalog-index.sdl`) or `bundled`.
+    string sourceId;
+    string catalogPath;
+    string repositoryUrl;
+    bool repositoryClosedSource;
 }
 
 ConfigProfile[] loadProfileCatalog(string sdlText, string catalogDir = ".")

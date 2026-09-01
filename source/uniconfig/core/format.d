@@ -16,6 +16,30 @@ enum ConfigFormat
     hcl, /// tfvars / HCL-lite assignments
 }
 
+/// Official format documentation for the chrome banner.
+string formatSpecUrl(ConfigFormat f)
+{
+    final switch (f)
+    {
+    case ConfigFormat.unknown:
+        return "";
+    case ConfigFormat.json:
+    case ConfigFormat.json5:
+        return "https://www.json.org/json-en.html";
+    case ConfigFormat.yaml:
+        return "https://yaml.org/spec/";
+    case ConfigFormat.toml:
+        return "https://toml.io/";
+    case ConfigFormat.ini:
+    case ConfigFormat.cfg:
+        return "https://en.wikipedia.org/wiki/INI_file";
+    case ConfigFormat.sdlang:
+        return "https://github.com/Abscissa/SDLang-D";
+    case ConfigFormat.hcl:
+        return "https://developer.hashicorp.com/terraform/language/syntax/configuration";
+    }
+}
+
 string formatName(ConfigFormat f)
 {
     final switch (f)
