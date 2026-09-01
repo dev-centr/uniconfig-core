@@ -5,6 +5,7 @@
 * `catalog-index.sdl` — user-local registered vocabulary pointers
 * `registerCatalogSource` / `unregisterCatalogSource` with required repository URL or closed-source flag
 * `ProfileResolver` — lazy merge of bundled + registered catalogs
+* `form_model` — `FormRow`, `flattenFormRows` for toolkit binders
 * `formatSpecUrl` for format documentation links
 
 == 2026-08-17 — v0.1.0
