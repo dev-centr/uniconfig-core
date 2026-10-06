@@ -9,3 +9,5 @@
 !source/**
 !.github/
 !.github/**
+!/.editorconfig
+!/.gitattributes
