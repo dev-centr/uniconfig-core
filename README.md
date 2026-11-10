@@ -1,0 +1,28 @@
+<div align="center">
+<a href="https://github.com/dev-centr/uniconfig-core/graphs/contributors"><img src="https://img.shields.io/github/contributors/dev-centr/uniconfig-core.svg?style=for-the-badge" alt="Contributors"></a>
+<a href="https://github.com/dev-centr/uniconfig-core/blob/main/LICENSE"><img src="https://img.shields.io/github/license/dev-centr/uniconfig-core.svg?style=for-the-badge" alt="License"></a>
+<h3 align="center">uniconfig-core</h3>
+<p align="center">
+Schema-aware config tree for UniConfig Config Panel.<br />
+<a href="https://docs.devcentr.org/tools/uniconfig/architecture.html"><strong>Explore the docs »</strong></a>
+</p>
+</div>
+
+# uniconfig-core
+
+D library: codecs, JSON Schema subset, SDLang profiles, file registry. No GUI.
+
+Desktop app: https://github.com/dev-centr/uniconfig
+
+```d
+import uniconfig.core;
+auto d = openDocument("config.toml", ctx);
+```
+
+## Changelog
+
+See `CHANGELOG.adoc`.
+
+## License
+
+MIT

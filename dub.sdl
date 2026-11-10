@@ -1,6 +1,6 @@
 name "uniconfig-core"
 description "Schema-aware config tree: parsers, merge, profiles, and registry for UniConfig Config Panel"
-version "0.1.0"
+version "0.1.1"
 authors "DevCentr"
 copyright "Copyright © 2026, DevCentr"
 homepage "https://github.com/dev-centr/uniconfig-core"
